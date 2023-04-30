@@ -1,0 +1,76 @@
+/* Center all text */
+body, h1, label, input[type=number], button, #result {
+  text-align: center;
+}
+
+/* Add black border with green and blue background */
+body {
+  border: 1px solid #555;
+  background-color: #e6e6e6;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Center align heading */
+h1 {
+  margin: 10px;
+  color: #555;
+}
+
+/* Add black border and white background to form */
+form {
+  border: 1px solid #555;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 300px;
+}
+
+/* Add padding and margin to labels */
+label {
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  background-color: #f2f2f2;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+/* Add padding and margin to input fields */
+input[type=number] {
+  margin: 5px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px #0000001a;
+  max-width: 100%;
+}
+
+/* Add green background to simple interest button and blue background to compound interest button */
+button {
+  margin: 5px;
+  padding: 5px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#simple-interest {
+  background-color: #4CAF50;
+}
+
+#compound-interest {
+  background-color: #2196F3;
+}
+
+/* Add black border and white background to result */
+#result {
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #555;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interest Calculator</title>
+    <link rel="stylesheet" href="final.css">
+  </head>
+  <body>
+    <h1>Interest Calculator</h1>
+    <form id="interest-form">
+      <label for="principal">Principal:</label>
+      <input type="number" id="principal" name="principal" required><br><br>
+
+      <label for="rate">Interest Rate (%):</label>
+      <input type="number" id="rate" name="rate" required><br><br>
+
+      <label for="time">Time (years):</label>
+      <input type="number" id="time" name="time" required><br><br>
+
+      <button type="button" id="simple-interest">Calculate Simple Interest</button>
+      <button type="button" id="compound-interest">Calculate Compound Interest</button>
+
+    </form>
+
+    <div id="result">
+      <div id="principal-amount"></div>
+      <div id="interest-amount"></div>
+      <div id="total-amount"></div>
+    </div>
+
+    <script>
+      function calculateSimpleInterest(principal, rate, time) {
+        const interest = (principal * rate * time) / 100;
+        const total = principal + interest;
+        return [interest, total];
+      }
+
+      function calculateCompoundInterest(principal, rate, time) {
+        const interest = principal * (Math.pow((1 + rate / 100), time)) - principal;
+        const total = principal + interest;
+        return [interest, total];
+      }
+
+      const form = document.querySelector('#interest-form');
+      const simpleButton = document.querySelector('#simple-interest');
+      const compoundButton = document.querySelector('#compound-interest');
+      const principalAmountElement = document.querySelector('#principal-amount');
+      const interestAmountElement = document.querySelector('#interest-amount');
+      const totalAmountElement = document.querySelector('#total-amount');
+
+      simpleButton.addEventListener('click', () => {
+        const principal = parseFloat(document.querySelector('#principal').value);
+        const rate = parseFloat(document.querySelector('#rate').value);
+        const time = parseFloat(document.querySelector('#time').value);
+
+        const [interest, total] = calculateSimpleInterest(principal, rate, time);
+
+        principalAmountElement.textContent = `Principal Amount: ${principal.toFixed(2)}`;
+        interestAmountElement.textContent = `Interest Amount: ${interest.toFixed(2)}`;
+        totalAmountElement.textContent = `Total Amount: ${total.toFixed(2)}`;
+      });
+
+      compoundButton.addEventListener('click', () => {
+        const principal = parseFloat(document.querySelector('#principal').value);
+        const rate = parseFloat(document.querySelector('#rate').value);
+        const time = parseFloat(document.querySelector('#time').value);
+
+        const [interest, total] = calculateCompoundInterest(principal, rate, time);
+
+        principalAmountElement.textContent = `Principal Amount: ${principal.toFixed(2)}`;
+        interestAmountElement.textContent = `Interest Amount: ${interest.toFixed(2)}`;
+        totalAmountElement.textContent = `Total Amount: ${total.toFixed(2)}`;
+      });
+    </script>
+  </body>
+</html>
