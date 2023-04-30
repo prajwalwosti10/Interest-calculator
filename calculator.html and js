@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Interest Calculator</title>
-    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="calculator.css">
   </head>
   <body>
     <h1>Interest Calculator</h1>
